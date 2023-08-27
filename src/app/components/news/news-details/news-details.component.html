@@ -1,0 +1,89 @@
+<!-- Calls header component -->
+<app-header></app-header>
+
+<!-- Background of new -->
+<div class="background"></div>
+
+<!-- Section with new -->
+<section>
+  <img src="../../../../assets/main_new.jpg" alt="main_new" />
+  <!-- <img [src]="news.imageUrl" alt="main_new" /> -->
+
+  <div class="content">
+    <!-- Title and date of the new -->
+    <div class="title-row">
+      <h3>EPROSEC abre inscrições para cursos técnicos em diversas áreas</h3>
+      <h4>04/05/2023</h4>
+      <!-- <h3>{{ news.title }}</h3>
+      <h4>{{ news.date | date : "dd/MM/yyyy" }}</h4> -->
+    </div>
+
+    <!-- Title and text divider -->
+    <div class="divider"></div>
+
+    <p>
+      <!-- {{ news.content }} -->
+      A EPROSEC acaba de anunciar a abertura das inscrições para 5 novas opções
+      de cursos técnicos. Essas opções são destinadas a preparar os estudantes
+      para atuar em diferentes áreas do mercado de trabalho e adquirir
+      habilidades técnicas essenciais.
+      <br />
+      O curso técnico de Geriatria, por exemplo, visa capacitar os estudantes
+      para atuar em instituições de cuidados com idosos, fornecendo
+      conhecimentos práticos e teóricos sobre a saúde e o bem-estar da população
+      idosa. Já o curso técnico de Eletrónica, Automação e Computadores prepara
+      os alunos para trabalhar com a manutenção e instalação de sistemas
+      eletrônicos, equipamentos de automação e computadores, que são
+      fundamentais em muitas áreas de atuação.
+      <br />
+      Para aqueles que desejam atuar em cargos administrativos, a EPROSEC
+      oferece o curso técnico de Apoio à Gestão, que aborda temas como
+      contabilidade, gestão financeira, recursos humanos e logística. Já o curso
+      técnico de Ação Educativa visa formar profissionais capacitados para
+      trabalhar na promoção da educação, cultura e desenvolvimento social em
+      diversas áreas.
+      <br />
+      Por fim, o curso técnico de Informação e Animação Turística é uma
+      excelente opção para quem deseja trabalhar no setor de turismo, preparando
+      os alunos para lidar com diferentes aspectos do turismo, como
+      planejamento, promoção, organização e execução de atividades turísticas.
+      Todos os cursos oferecidos pela EPROSEC têm duração média de dois anos e
+      meio e contam com professores altamente capacitados e experientes.
+      <br />
+      As inscrições e podem ser feitas através do seguinte link:
+      <a href="https://www.eprosec.com/inscricoes" class="link-text">
+        https://www.eprosec.com/inscricoes
+      </a>
+    </p>
+  </div>
+
+  <!-- Other news -->
+  <div class="other-news">
+    <!-- <div class="box" *ngFor="let news_item of news_list">
+      <img [src]="news_item.imageUrl" alt="new_image" />
+      <h4>{{ news_item.title }}</h4>
+      <div class="divider"></div>
+      <a href="news/{{ news_item.id }}" class="link-text">Ver mais</a>
+    </div> -->
+    <div class="box">
+      <img src="../../../../assets/placeholder_image.png" alt="new_image" />
+      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+      <div class="divider"></div>
+      <a href="#" class="link-text">Ver mais</a>
+    </div>
+
+    <div class="box">
+      <img src="../../../../assets/placeholder_image.png" alt="new_image" />
+      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+      <div class="divider"></div>
+      <a href="#" class="link-text">Ver mais</a>
+    </div>
+
+    <div class="box">
+      <img src="../../../../assets/placeholder_image.png" alt="new_image" />
+      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+      <div class="divider"></div>
+      <a href="#" class="link-text">Ver mais</a>
+    </div>
+  </div>
+</section>

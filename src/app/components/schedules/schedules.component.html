@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<section>
+  <h2>Horários</h2>
+
+  <div class="info">
+    <div class="selects">
+      <select [(ngModel)]="selectedCourse">
+        <option value="apoio_gestao">Apoio à Gestão</option>
+        <option value="auxiliar_saude">Auxiliar de Saúde</option>
+        <option value="agropecuaria">AgroPecuária</option>
+        <option value="programador_informatica">
+          Programador de Informática
+        </option>
+        <option value="acao_educativa">Ação Educativa</option>
+        <option value="comunicacao_servico_digital">
+          Comunicação e Serviço Digital
+        </option>
+        <option value="apoio_psicossocial">Apoio Psicossocial</option>
+      </select>
+
+      <select [(ngModel)]="selectedYear">
+        <option value="1">Primeiro Ano</option>
+        <option value="2">Segundo Ano</option>
+        <option value="3">Terceiro Ano</option>
+      </select>
+    </div>
+
+    <p class="small-text">(Horário sujeito a alterações)</p>
+  </div>
+
+  <div class="image-wrapper">
+    <img [src]="getImageUrl()" alt="Sem horário disponível" />
+  </div>
+</section>
+
+<app-footer></app-footer>

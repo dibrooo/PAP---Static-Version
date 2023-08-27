@@ -1,0 +1,102 @@
+.honors {
+  padding-top: 100px;
+
+  h2 {
+    text-align: center;
+  }
+
+  /* The actual timeline (the vertical ruler) */
+  .timeline {
+    position: relative;
+    margin: 25px 75px;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+      width: 6px;
+      background-color: var(--black);
+      border-radius: 15px;
+    }
+
+    .year {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding: 25px;
+      z-index: 3;
+
+      h3 {
+        width: 150px;
+        color: var(--black);
+        text-align: center;
+        background-color: white;
+        border-top: 3px solid var(--primary);
+        border-bottom: 3px solid var(--primary);
+      }
+    }
+  }
+}
+
+/* Box with the content */
+.box {
+  position: relative;
+  margin: 25px 0;
+  padding: 15px 35px;
+  width: 50%;
+
+  /* The circles on the timeline */
+  &::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 5px solid var(--primary);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 0.1s ease-in-out;
+  }
+
+  &:hover::after {
+    background-color: var(--primary);
+  }
+
+  h4:not(.date),
+  p {
+    padding: 0 25px;
+  }
+
+  .date {
+    width: fit-content;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    color: white;
+    background-color: var(--primary);
+  }
+}
+
+/* Place the container to the left */
+.direction-l {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  left: 0;
+}
+
+/* Place the container to the right */
+.direction-r {
+  left: 50%;
+
+  /* Fix the circle for containers on the right side */
+  &::after {
+    left: -17px;
+  }
+}

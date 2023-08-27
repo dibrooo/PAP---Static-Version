@@ -1,0 +1,24 @@
+<header>
+  <div class="logo">
+    <a href="/">
+      <img src="assets/eprosec_logo_v2.png" alt="Eprosec logo" />
+      <h4 class="prevent-select">EPROSEC</h4>
+    </a>
+  </div>
+  <div class="actions">
+    <a href="login" *ngIf="!loggedIn">
+      <img src="../../../assets/icons/profile.svg" alt="profile_icon" />
+    </a>
+    <div class="logged" *ngIf="loggedIn">
+      <a href="profile">{{ user.pnome + " " + user.unome }}</a>
+      <img
+        src="../../../assets/icons/logout.svg"
+        alt="logout_icon"
+        (click)="logout()"
+      />
+    </div>
+    <a href="menu">
+      <img src="../../../assets/icons/menu.svg" alt="menu_icon" />
+    </a>
+  </div>
+</header>

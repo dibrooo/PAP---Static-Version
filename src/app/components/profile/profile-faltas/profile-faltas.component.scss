@@ -1,0 +1,13 @@
+.content {
+  padding-top: 100px;
+
+  th {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  th,
+  td {
+    padding: 5px;
+  }
+}

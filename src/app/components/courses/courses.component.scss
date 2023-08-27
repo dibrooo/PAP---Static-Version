@@ -1,0 +1,49 @@
+.courses {
+  padding-top: 100px;
+
+  h2 {
+    text-align: center;
+  }
+
+  .content > img {
+    margin-bottom: 50px;
+    margin-inline: 25px;
+  }
+
+  .box:hover {
+    color: var(--primary);
+  }
+}
+
+.new-courses {
+  h2 {
+    text-align: center;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 0 75px;
+
+  .carousel {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    gap: 15px;
+  }
+
+  .box {
+    display: flex;
+    flex: 0 0 200px;
+    flex-direction: column;
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    h4 {
+      text-align: center;
+    }
+  }
+}

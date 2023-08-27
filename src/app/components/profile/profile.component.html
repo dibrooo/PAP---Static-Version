@@ -1,0 +1,47 @@
+<app-header></app-header>
+
+<div class="profile">
+  <div class="left">
+    <div class="menu">
+      <ul>
+        <li>
+          <img
+            id="icon"
+            src="../../../assets/icons/schedule.svg"
+            alt="schedule"
+          />
+          <h3>Horário / Agenda</h3>
+        </li>
+
+        <a href="profile/faltas">
+          <li>
+            <img id="icon" src="../../../assets/icons/x.svg" alt="x" />
+            <h3>Ver Faltas</h3>
+          </li>
+        </a>
+
+        <li>
+          <img id="icon" src="../../../assets/icons/data.svg" alt="data" />
+          <h3>Ver Notas</h3>
+        </li>
+
+        <li>
+          <img id="icon" src="../../../assets/icons/folder.svg" alt="folder" />
+          <h3>Ver Trabalhos</h3>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="right">
+    <h3>{{ greeting }}, {{ currentDate | date : "dd 'de' MMMM 'de' yyyy" }}</h3>
+    <h1>Olá, {{ currentUser.pnome + " " + currentUser.unome }}</h1>
+    <h2>Curso Programador/a de Informática</h2>
+
+    <div class="widget-box">
+      <h4>Clique aqui para escolher um widget personalizado</h4>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

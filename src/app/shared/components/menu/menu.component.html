@@ -1,0 +1,42 @@
+<div class="menu">
+  <!-- Autoplay background video -->
+  <video [muted]="'muted'" autoplay loop #video>
+    <source src="../../../assets/background_video.mp4" type="video/mp4" />
+  </video>
+
+  <div class="content">
+    <!-- Calls header -->
+    <app-header></app-header>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="schedules">
+            <h2>Horários</h2>
+          </a>
+        </li>
+        <li><h2>Refeições</h2></li>
+        <li>
+          <a href="courses">
+            <h2>Cursos</h2>
+          </a>
+        </li>
+        <li>
+          <a href="news">
+            <h2>Notícias</h2>
+          </a>
+        </li>
+        <li><h2>Secretaria</h2></li>
+        <li>
+          <a href="about">
+            <h2>Sobre a escola</h2>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <footer>
+      <img src="../../../assets/eprosec_logotipos.png" alt="logotipos" />
+    </footer>
+  </div>
+</div>

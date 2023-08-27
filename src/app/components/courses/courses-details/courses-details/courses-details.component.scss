@@ -1,0 +1,56 @@
+.intro {
+  padding-top: 100px;
+  background-image: url("../../../../../assets/courses/apoio_a_gestao_background_detail.png");
+  background-repeat: no-repeat;
+  background-position: right top 75px;
+
+  span {
+    color: var(--primary);
+  }
+}
+
+.will-learn {
+  ul {
+    padding: 0 100px;
+
+    li {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+  }
+}
+
+.students-say {
+  .box-wrapper {
+    display: flex;
+    gap: 25px;
+  }
+
+  button {
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    text-transform: uppercase;
+  }
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  padding-top: 25px;
+  width: 25%;
+  text-align: center;
+  border: 3px solid var(--black);
+  border-radius: 15px;
+  background-size: 10px;
+
+  img {
+    width: 90px;
+    height: 90px;
+    border-radius: 100px;
+    object-fit: cover;
+  }
+}

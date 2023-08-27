@@ -1,0 +1,37 @@
+section {
+  padding-top: 100px;
+  padding-inline: 150px;
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .selects {
+      display: flex;
+      gap: 25px;
+
+      select {
+        font-size: 24px;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        background: none;
+      }
+
+      option {
+        font-size: 20px;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 75%;
+    }
+  }
+}

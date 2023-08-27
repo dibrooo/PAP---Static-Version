@@ -1,0 +1,121 @@
+section {
+  padding-top: 100px;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.stepper {
+  --size: 2rem;
+  --spacing: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  .stepper-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.1s;
+
+    &::before {
+      --size: 2rem;
+      content: "";
+      display: block;
+      position: relative;
+      margin: 1rem auto 0;
+      width: var(--size);
+      height: var(--size);
+      border: 5px solid var(--primary);
+      border-radius: 50%;
+      z-index: 1;
+      box-sizing: border-box;
+    }
+
+    &:not(:last-child):after {
+      content: "";
+      position: relative;
+      top: 2rem;
+      width: calc(100% - var(--size) - calc(var(--spacing) * 2));
+      left: calc(50% + calc(var(--size) / 2 + var(--spacing)));
+      height: 2px;
+      background-color: var(--primary);
+      order: -1;
+    }
+  }
+}
+
+.stepper-item.active {
+  opacity: 1 !important;
+
+  &::before {
+    background-color: var(--primary);
+    border: none !important;
+    animation: stepper-in 0.2s;
+  }
+}
+
+.stepper-item.finish {
+  &::before {
+    background-color: var(--black);
+    border: none !important;
+  }
+}
+
+.stepper-item.finish:not(.active) {
+  &::before {
+    background: none;
+    border: 5px solid var(--black) !important;
+  }
+}
+
+.stepper-item:hover:not(.active) {
+  opacity: 0.7 !important;
+}
+
+@keyframes stepper-in {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.tab {
+  display: none;
+  gap: 50px;
+  margin: 25px 75px;
+
+  .left,
+  .right {
+    width: 50%;
+
+    .field {
+      margin-bottom: 15px;
+
+      select {
+        width: 100%;
+        background: none;
+      }
+    }
+  }
+}
+
+.checkbox-wrapper {
+  label {
+    font-weight: normal;
+  }
+}
+
+.controls {
+  overflow: auto;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+}

@@ -1,0 +1,311 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+:root {
+  --primary: #eb9b11;
+  --black: #1c1c1c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: bold;
+}
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.small-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+a {
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.link-text {
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    // Inicialmente define a escala horizontal como 0, tornando-o invisível.
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary);
+    transform-origin: bottom right;
+    // Especifica uma transição suave com duração de 0,3 segundos para a propriedade de transformação.
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover:after {
+    // Altera a escala horizontal para 1, tornando-o visível.
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+br {
+  margin-bottom: 5px;
+}
+
+input,
+textarea,
+select {
+  padding: 5px 15px;
+  font-size: 20px;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: 0;
+}
+
+@mixin magic-border($width, $color, $duration, $direction) {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: calc(100% + #{$width * 2});
+    height: calc(100% + #{$width * 2});
+    top: calc(#{$width}/ -1);
+    left: calc(#{$width}/ -1);
+    background: linear-gradient(to right, $color 0%, $color 100%),
+      linear-gradient(to top, $color 50%, transparent 50%),
+      linear-gradient(to top, $color 50%, transparent 50%),
+      linear-gradient(to right, $color 0%, $color 100%),
+      linear-gradient(to left, $color 0%, $color 100%);
+    background-size: 100% $width, $width 200%, $width 200%, 0% $width, 0% $width;
+    background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+    background-repeat: no-repeat, no-repeat;
+    transition: transform $duration ease-in-out,
+      background-position $duration ease-in-out,
+      background-size $duration ease-in-out;
+    transform: scaleX(0) rotate(180deg * $direction);
+    transition-delay: $duration * 2, $duration, 0s;
+  }
+  &:focus-within {
+    &:before {
+      background-size: 200% $width, $width 400%, $width 400%, 55% $width,
+        55% $width;
+      background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+      transform: scaleX(1) rotate(180deg * $direction);
+      transition-delay: 0s, $duration, $duration * 2;
+    }
+  }
+}
+
+.input-wrapper {
+  border: 3px solid var(--black);
+  @include magic-border(3px, var(--primary), 0.3s, 1);
+
+  input {
+    width: 100%;
+    height: 100%;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+}
+
+button {
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  background: linear-gradient(
+    var(--primary),
+    var(--primary) 50%,
+    var(--black) 50%,
+    var(--black)
+  );
+  background-size: 100% 200%;
+  transition: 0.5s;
+  cursor: pointer;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+button:hover {
+  background-position: 100% 100%;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+img {
+  border-radius: 15px;
+}
+
+section {
+  padding: 25px 75px;
+
+  h3 {
+    color: white;
+  }
+
+  p {
+    color: var(--black);
+  }
+
+  button {
+    background: linear-gradient(
+      var(--primary),
+      var(--primary) 50%,
+      var(--black) 50%,
+      var(--black)
+    );
+    background-size: 100% 200%;
+  }
+}
+
+.dark-section {
+  background-color: var(--black);
+
+  p,
+  a,
+  h4 {
+    color: white;
+  }
+
+  button {
+    background: linear-gradient(
+      var(--primary),
+      var(--primary) 50%,
+      white 50%,
+      white
+    );
+    background-size: 100% 200%;
+  }
+
+  button:hover {
+    background-position: 100% 100%;
+    color: var(--black);
+  }
+}
+
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.snackbar {
+  visibility: hidden;
+  position: fixed;
+  display: block;
+  margin-left: -150px;
+  padding: 5px 10px;
+  width: 300px;
+  left: 50%;
+  bottom: 30px;
+  text-align: center;
+  color: white;
+  border-radius: 15px;
+  background-color: var(--black);
+  z-index: 50;
+}
+
+.snackbar.show {
+  visibility: visible;
+  animation: fade-in 0.5s, fade-out 0.5s 2.5s;
+}
+
+@keyframes fade-in {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  background: var(--primary);
+}
+
+::selection {
+  background: var(--primary);
+}
+
+h2::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: var(--primary);
+}
+
+h2::selection {
+  color: white;
+  background: var(--primary);
+}

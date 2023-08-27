@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<section class="content">
+  <h2>Faltas</h2>
+
+  <table>
+    <tr>
+      <th>Disciplina</th>
+      <th>Justificadas</th>
+      <th>Injustificadas</th>
+      <th>Acumuladas</th>
+      <th>Limite</th>
+    </tr>
+    <tr *ngFor="let falta of faltas">
+      <td>{{ falta.dnome }}</td>
+      <td>{{ falta.justif }}</td>
+      <td>{{ falta.injust }}</td>
+      <td>{{ falta.acum }}</td>
+      <td>{{ falta.lim }}</td>
+    </tr>
+  </table>
+</section>

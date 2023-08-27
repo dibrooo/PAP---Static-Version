@@ -1,0 +1,239 @@
+:host ::ng-deep .header-transparent header {
+  background-position: 100% 100%;
+  transition: ease-in background 0.3s;
+}
+
+.hero-section {
+  height: 100vh;
+  color: white;
+  background-color: #000000bf;
+
+  video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
+  }
+
+  .content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+      font-size: 96px;
+      font-weight: bold;
+      text-decoration: underline;
+      text-decoration-color: var(--primary);
+      text-underline-offset: 20px;
+      text-decoration-thickness: 5px;
+    }
+
+    h3 {
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    button {
+      font-size: 24px;
+    }
+  }
+}
+
+.honors-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h4 {
+    margin-bottom: 15px;
+    color: white;
+  }
+
+  .images {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+
+    div {
+      width: 233px;
+      height: 233px;
+      color: white;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+
+      .overlay {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 233px;
+        height: 233px;
+        margin-top: -238px;
+        padding: 15px;
+        text-align: center;
+        border-radius: 15px;
+        background-color: rgba(235, 155, 17, 0.75);
+        opacity: 0;
+        z-index: 10;
+        transition: 0.3s;
+        cursor: default;
+      }
+
+      &:hover .overlay {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.from-student-section {
+  display: flex;
+  background-image: url("../../../assets/from-student/project_image.png");
+  background-repeat: no-repeat;
+  background-size: 40% 100%;
+  background-position: right;
+
+  .content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 15px;
+
+    p {
+      text-align: center;
+    }
+
+    .text-carrousel {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      overflow: hidden;
+
+      h2 {
+        color: var(--black);
+        text-transform: none;
+        white-space: nowrap;
+        padding: 0 5px;
+        animation: marquee 5s linear infinite;
+      }
+
+      span {
+        color: var(--primary);
+      }
+    }
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.news-section {
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-height: 350px;
+  }
+
+  h3,
+  p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  h3 {
+    cursor: pointer;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+
+  .other-news {
+    display: flex;
+    gap: 25px;
+    margin-top: 50px;
+
+    .new {
+      width: 33%;
+    }
+
+    p {
+      -webkit-line-clamp: 5;
+    }
+  }
+}
+
+.send-message-section {
+  margin: 0 150px;
+
+  h2 {
+    text-align: center;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+    .character-count {
+      display: inline;
+    }
+  }
+
+  .row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .submit {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+}

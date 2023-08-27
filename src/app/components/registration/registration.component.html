@@ -1,0 +1,413 @@
+<app-header></app-header>
+
+<section>
+  <h2>Inscrições</h2>
+
+  <form [formGroup]="registrationForm" id="form">
+    <ol class="stepper">
+      <li class="stepper-item" (click)="changeTab(0)">
+        <h4 class="stepper-title">Dados Pessoais</h4>
+      </li>
+      <li class="stepper-item" (click)="changeTab(1)">
+        <h4 class="stepper-title">Filiação</h4>
+      </li>
+      <li class="stepper-item" (click)="changeTab(2)">
+        <h4 class="stepper-title">Escolha de Curso</h4>
+      </li>
+      <li class="stepper-item" (click)="changeTab(3)">
+        <h4 class="stepper-title">Formulário Complementar</h4>
+      </li>
+    </ol>
+    <div class="tab" #tab>
+      <div class="left">
+        <div class="field">
+          <label>Nome Completo</label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              placeholder="Nome Completo"
+              formControlName="fullName"
+              required
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label>Data de Nascimento</label>
+          <div class="input-wrapper">
+            <input type="date" formControlName="dateOfBirth" required />
+          </div>
+        </div>
+        <div class="field">
+          <label>Nacionalidade</label>
+          <div class="input-wrapper">
+            <select formControlName="nationality" required>
+              <option value="">Selecione...</option>
+              <option value="Portuguesa">Portuguesa</option>
+              <option value="Outra">Outra</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Naturalidade</label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              placeholder="Freguesia"
+              formControlName="placeOfBirth"
+              required
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label>Cartão de Cidadão</label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              placeholder="12345678-9-ab0"
+              formControlName="citizenCard"
+              required
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label>Número de Identificação Fiscal</label>
+          <div class="input-wrapper">
+            <input type="text" formControlName="fiscalNumber" required />
+          </div>
+        </div>
+        <div class="field">
+          <label>E-mail</label>
+          <div class="input-wrapper">
+            <input
+              type="email"
+              placeholder="exemplo@gmail.com"
+              formControlName="email"
+              required
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label>Escolaridade</label>
+          <div class="input-wrapper">
+            <select formControlName="educationLevel" required>
+              <option value="">Selecione...</option>
+              <option>9º Ano (Completo)</option>
+              <option>9º Ano (Frequência)</option>
+              <option>10º Ano (Completo)</option>
+              <option>10º Ano (Frequência)</option>
+              <option>11º Ano (Completo)</option>
+              <option>11º Ano (Frequência)</option>
+              <option>12º Ano (Completo)</option>
+              <option>12º Ano (Frequência)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="address-wrapper" formGroupName="address">
+          <div class="field">
+            <label>Morada</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                placeholder="Rua / Avenida"
+                formControlName="street"
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label>Complemento Morada</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                placeholder="Número da porta / Andar"
+                formControlName="complement"
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label>Local</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                placeholder="Freguesia"
+                formControlName="locality"
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label>Concelho</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                placeholder="Concelho"
+                formControlName="municipality"
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label>Código Postal</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                placeholder="0000-000"
+                formControlName="postalCode"
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label>Localidade</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                placeholder="País"
+                formControlName="country"
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label>Telemóvel</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                placeholder="123 456 789"
+                formControlName="mobilePhone"
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label>Outro Telemóvel</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                placeholder="123 456 789"
+                formControlName="otherPhone"
+                required
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab" #tab>
+      <div class="left">
+        <h4>Pai</h4>
+        <div class="father-wrapper" formGroupName="father">
+          <div class="field">
+            <label>Nome Completo</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                placeholder="Nome Completo"
+                formControlName="fatherFullName"
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label>Profissão</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                placeholder="Profissão"
+                formControlName="fatherProfession"
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label>Habilitações</label>
+            <div class="input-wrapper">
+              <select formControlName="fatherEducationLevel" required>
+                <option value="">Selecione...</option>
+                <option>Ensino Básico (9º Ano)</option>
+                <option>Ensino Secundário (12º Ano)</option>
+                <option>Licenciatura ou Superior</option>
+                <option>Outro</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <h4>Mãe</h4>
+        <div class="mother-wrapper" formGroupName="mother">
+          <div class="field">
+            <label>Nome Completo</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                placeholder="Nome Completo"
+                formControlName="motherFullName"
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label>Profissão</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                placeholder="Profissão"
+                formControlName="motherProfession"
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label>Habilitações</label>
+            <div class="input-wrapper">
+              <select formControlName="motherEducationLevel" required>
+                <option value="">Selecione...</option>
+                <option>Ensino Básico (9º Ano)</option>
+                <option>Ensino Secundário (12º Ano)</option>
+                <option>Licenciatura ou Superior</option>
+                <option>Outro</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab" #tab>
+      <div class="left">
+        <p>
+          Escolha quais os curso a que pretende concorrer dos menus abaixo, até
+          ao máximo de 3 cursos diferentes.
+        </p>
+        <div class="courseChoices-wrapper" formGroupName="courseChoices">
+          <div class="field">
+            <label>Primeira prioridade</label>
+            <div class="input-wrapper">
+              <select formControlName="firstChoice" required>
+                <option value="">Selecione...</option>
+                <option>Técnico/a de Apoio à Gestão</option>
+                <option>Técnico/a de Ação Educativa</option>
+                <option>
+                  Técnico/a de Eletrónica, Automação e Computadores
+                </option>
+                <option>Técnico/a de Informação e Animação Turística</option>
+                <option>Técnico/a de Geriatria</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Segunda prioridade</label>
+            <div class="input-wrapper">
+              <select formControlName="secondChoice" required>
+                <option value="">Selecione...</option>
+                <option>Técnico/a de Apoio à Gestão</option>
+                <option>Técnico/a de Ação Educativa</option>
+                <option>
+                  Técnico/a de Eletrónica, Automação e Computadores
+                </option>
+                <option>Técnico/a de Informação e Animação Turística</option>
+                <option>Técnico/a de Geriatria</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Terceira prioridade (Opcional)</label>
+            <div class="input-wrapper">
+              <select formControlName="thirdChoice">
+                <option value="">Selecione...</option>
+                <option>Técnico/a de Apoio à Gestão</option>
+                <option>Técnico/a de Ação Educativa</option>
+                <option>
+                  Técnico/a de Eletrónica, Automação e Computadores
+                </option>
+                <option>Técnico/a de Informação e Animação Turística</option>
+                <option>Técnico/a de Geriatria</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>RGPD</label>
+          <div class="checkbox-wrapper">
+            <label>
+              <input type="checkbox" formControlName="gdprConsent" />
+              O titular inscrito autoriza expressamente que os seus dados
+              pessoais fornecidos à escola Profissional Eprosec, sejam por esta
+              tratados. Os dados pessoais recolhidos na presente Ficha de
+              inscrição destinam-se à gestão de inscritos nesta escola
+              profissional, bem como para todos os efeitos imprescindíveis ao
+              vínculo celebrado, pelo período estritamente necessário. Aos
+              titulares dos dados é concedido o direito de acesso, modificação e
+              cancelamento dos seus dados pessoais, o que deve ser efetuado por
+              escrito ou presencialmente nas instalações da Eprosec.
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="field">
+          <label>Entrega de documentação</label>
+          <div class="input-wrapper">
+            <input type="file" formControlName="documentUpload" />
+          </div>
+          <p class="small-text">
+            Para enviar os documentos necessários em formato digitar tem de o
+            fazer utilizando o formato .rar ou .zip.
+          </p>
+        </div>
+        <div class="field">
+          <h4>Documentos necessários</h4>
+          <p>
+            - Certificado de Habilitações do 9º ano (discriminado por
+            disciplina) e Registo Biográfico <br />
+            - Declaração de Frequência do 9º ano (caso ainda te encontres a
+            frequentar) <br />
+            - Registo Biográfico (se tiver frequentado 10º, 11º, 12º ano) <br />
+            - 1 Fotografia tipo passe
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="tab" #tab>
+      <div class="field">
+        <label>Validação da Inscrição</label>
+        <div class="checkbox-wrapper">
+          <label>
+            <input type="checkbox" formControlName="submission" />
+            Depois de submeter a sua inscrição, será automaticamente direcionado
+            para um formulário de preenchimento obrigatório. A sua inscrição só
+            erá considerada completa após a submissão do referido formulário.
+            Obrigado.
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="controls">
+      <div class="wrapper">
+        <button type="button" id="prevBtn" (click)="nextPrev(-1)">
+          Página Anterior
+        </button>
+        <button type="button" (click)="resetForm()">Recomeçar</button>
+        <button type="button" id="nextBtn" (click)="nextPrev(1)">
+          Página Seguinte
+        </button>
+        <button
+          #submitButton
+          *ngIf="currentTab === 3"
+          type="button"
+          [disabled]="!registrationForm.valid"
+          (click)="submitForm()"
+        >
+          Submeter
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="snackbar" #snackbar>
+    <p class="small-text" style="color: white">{{ snackbarMessage }}</p>
+  </div>
+</section>

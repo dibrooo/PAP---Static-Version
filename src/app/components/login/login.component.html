@@ -1,0 +1,69 @@
+<a href="/">
+  <img
+    src="../../../assets/eprosec_logotipo_v2_scaled.png"
+    alt="eprosec logo"
+  />
+</a>
+
+<div class="login-page">
+  <div class="box">
+    <h2>Iniciar sessão</h2>
+
+    <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
+      <div class="inputs">
+        <div class="field">
+          <label>Email</label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              name="username"
+              placeholder="Insira o seu email"
+              required
+              [(ngModel)]="form.username"
+              #username="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && username.errors }"
+            />
+            <div
+              *ngIf="username.errors && f.submitted"
+              class="invalid-feedback"
+            >
+              É necessário um Username!
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Palavra-passe</label>
+          <div class="input-wrapper">
+            <input
+              type="password"
+              name="password"
+              placeholder="Insira a sua palavra-passe"
+              required
+              [(ngModel)]="form.password"
+              #password="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+            />
+            <div
+              *ngIf="password.errors && f.submitted"
+              class="invalid-feedback"
+            >
+              <div *ngIf="password.errors['required']">
+                É necessária uma Password
+              </div>
+              <div *ngIf="password.errors['minlength']">
+                Password com pelo menos 6 carateres
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <button type="submit">Entrar</button>
+        <a href="#" class="link-text">Repor palavra-passe</a>
+        <div *ngIf="f.submitted && isLoginFailed" role="alert">
+          O login falhou: {{ errorMessage }}
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

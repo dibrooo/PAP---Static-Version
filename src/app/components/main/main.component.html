@@ -1,0 +1,254 @@
+<!-- Calls header component with a transparent effect class -->
+<app-header class="header-transparent" #header></app-header>
+
+<!-- Hero section -->
+<main class="hero-section">
+  <!-- Autoplay background video -->
+  <video [muted]="'muted'" autoplay loop #video>
+    <source src="../../../assets/background_video.mp4" type="video/mp4" />
+  </video>
+
+  <div class="content">
+    <h1>EPROSEC</h1>
+    <h3>Melhor escola profissional da Região Autónoma dos Açores</h3>
+    <div class="dark-section" style="background: none">
+      <a href="registration"><button type="button">Inscreve-te já</button></a>
+    </div>
+  </div>
+</main>
+
+<!-- About section -->
+<section class="about-section">
+  <h2>Sobre</h2>
+  <p>
+    A EPROSEC, pioneira no ensino profissional na região, mantém a aposta na
+    juventude açoriana e na qualidade da formação que ministra como fatores de
+    uma história de sucesso iniciada há já 30 anos.
+    <br />
+    O novo edifício da EPROSEC é constituído por 30 salas de aula, incluindo
+    laboratórios de informática. Um auditório com 150 lugares, refeitório, sala
+    de estudo, biblioteca, bar, sala de convívio de alunos, gabinete médico e
+    sala de professores, bem como a área destinada aos serviços administrativos,
+    são espaços que funcionam como estruturas de apoio.
+    <br />
+    A escola está equipada com um pavilhão gimnodesportivo e um polivalente
+    exterior complementar. Amplas áreas ajardinadas completam o complexo.
+    <br />
+  </p>
+  <a href="about"><button type="button">Saber mais</button></a>
+</section>
+
+<!-- Honors section -->
+<section class="honors-section dark-section">
+  <h2>Honras</h2>
+  <h4>A EPROSEC possui uma história com várias conquistas e prémios.</h4>
+  <a href="honors"><button type="button">Ver todas</button></a>
+
+  <!-- Most recent ones -->
+  <div class="images">
+    <div>
+      <img src="../../../assets/honors_1.jpg" alt="campeonato" />
+      <div class="overlay" style="font-weight: 600">
+        <p style="font-size: 13px; padding-bottom: 15px">
+          45.º Campeonato Nacional das Profissões
+        </p>
+        <b style="font-size: 18px">Melhor concorrente por Região</b>
+        <p style="font-size: 16px">
+          🏆 Açores: <b>Ricardo Figueira</b> - Contabilidade
+        </p>
+      </div>
+    </div>
+    <div>
+      <img src="../../../assets/honors_2.jpg" alt="campeonato" />
+      <div class="overlay" style="font-weight: 600">
+        <p style="font-size: 13px; padding-bottom: 15px">
+          45.º Campeonato Nacional das Profissões
+        </p>
+        <b style="font-size: 18px">Contabilidade</b>
+        <p style="font-size: 16px">
+          🥇 Medalha de Ouro <b>Ricardo Figueira</b>
+        </p>
+      </div>
+    </div>
+    <div>
+      <img src="../../../assets/honors_3.jpg" alt="campeonato" />
+      <div class="overlay" style="font-weight: 600">
+        <p style="font-size: 13px; padding-bottom: 15px">
+          45.º Campeonato Nacional das Profissões
+        </p>
+        <b style="font-size: 18px">Desenvolvimento de Aplicações Móveis</b>
+        <p style="font-size: 16px">🥇 Medalha de Ouro <b>Nelson Ponte</b></p>
+      </div>
+    </div>
+    <div>
+      <img src="../../../assets/honors_4.jpg" alt="campeonato" />
+      <div class="overlay" style="font-weight: 600">
+        <p style="font-size: 13px; padding-bottom: 15px">
+          45.º Campeonato Nacional das Profissões
+        </p>
+        <b style="font-size: 18px">Web Technologies</b>
+        <p style="font-size: 16px">
+          🥉 Medalha de Bronze <b>António Amaral</b>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- From student section -->
+<section class="from-student-section">
+  <div class="content">
+    <h2>Do aluno</h2>
+    <!-- Student name marquee -->
+    <div class="text-carrousel">
+      <h2>Filipe Reis <span>•</span></h2>
+      <h2>Filipe Reis <span>•</span></h2>
+      <h2>Filipe Reis <span>•</span></h2>
+      <h2>Filipe Reis <span>•</span></h2>
+      <h2>Filipe Reis <span>•</span></h2>
+    </div>
+    <p>
+      Este projeto é um jogo feito em uma linguagem de programação chamada
+      Python, este jogo usa uma biblioteca chamada Pygame.
+      <br />
+      Nesse jogo o objetivo é subir o mais alto possível de plataforma em
+      plataforma enquanto isso a pontuação vai aumentar sempre que o jogador
+      salta nas plataformas mas no caminho aparecem inimigos e algumas
+      plataformas diferentes.
+    </p>
+
+    <!-- Link to the work -->
+    <button><a href="http://localhost:4200/">Ver trabalho</a></button>
+  </div>
+</section>
+
+<!-- News section -->
+<section class="news-section dark-section">
+  <div class="row">
+    <h2>Notícias</h2>
+    <a href="news"><button type="button">Ver todas</button></a>
+  </div>
+
+  <!-- Main new -->
+  <div class="main-new">
+    <a href="news/details">
+      <h3>Inscrições abertas</h3>
+    </a>
+    <!-- <a href="news/{{ main_new?.id }}">
+      <h3>{{ main_new?.title }}</h3>
+    </a> -->
+    <p>
+      Estão abertas as inscrições para cursos profissionais. Desta vez a EPROSEC
+      apresenta 5 opções de cursos novos.
+      <!-- {{ main_new?.content }} -->
+    </p>
+    <img src="../../../assets/main_new.jpg" alt="novos_cursos" />
+    <!-- <img [src]="main_new?.imageUrl" alt="Notícia Principal" /> -->
+  </div>
+
+  <!-- Other recent news -->
+  <div class="other-news">
+    <!-- <div class="new" *ngFor="let news_item of news">
+      <a href="news/{{ news_item.id }}">
+        <h3>{{ news_item.title }}</h3>
+      </a>
+      <p>
+        {{ news_item.content }}
+      </p>
+    </div> -->
+    <div class="new">
+      <a href="#">
+        <h3>Novidade</h3>
+      </a>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex reiciendis
+        doloribus exercitationem aspernatur placeat dolorem harum, minus eius
+        quam autem vero qui et assumenda fugit corrupti voluptatibus neque odit
+        officiis?
+      </p>
+    </div>
+    <div class="new">
+      <a href="#">
+        <h3>Novidade</h3>
+      </a>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit animi
+        quibusdam sequi in maiores neque reprehenderit, unde eaque hic iusto
+        quisquam, at autem possimus nostrum accusantium omnis, aut maxime ex.
+      </p>
+    </div>
+    <div class="new">
+      <a href="#">
+        <h3>Novidade</h3>
+      </a>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis
+        mollitia consectetur amet dolores. Nostrum quibusdam, at alias magnam
+        odit commodi dicta. Voluptates voluptatem alias dolorem molestiae quos
+        tempore velit pariatur.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Send message -->
+<section class="send-message-section">
+  <h2>Envie-nos uma mensagem</h2>
+  <form [formGroup]="emailForm" (ngSubmit)="sendEmail()">
+    <div class="row">
+      <div class="field">
+        <label>Nome</label>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            formControlName="name"
+            placeholder="Insira o seu nome"
+          />
+        </div>
+        <div class="character-count">
+          {{ emailForm.get("name")?.value?.length || 0 }} / 50
+        </div>
+      </div>
+      <div class="field">
+        <label>Assunto</label>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            formControlName="subject"
+            placeholder="Insira o assunto da mensagem"
+          />
+        </div>
+        <div class="character-count">
+          {{ emailForm.get("subject")?.value?.length || 0 }} / 100
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Mensagem</label>
+      <div class="input-wrapper">
+        <textarea
+          cols="30"
+          rows="7"
+          formControlName="body"
+          placeholder="Insira a sua mensagem"
+        ></textarea>
+      </div>
+      <div class="character-count">
+        {{ emailForm.get("body")?.value?.length || 0 }} / 500
+      </div>
+    </div>
+
+    <div class="submit">
+      <button type="submit" [disabled]="emailForm.invalid" #emailButton>
+        Enviar
+      </button>
+    </div>
+  </form>
+</section>
+
+<div class="snackbar" #snackbar>
+  <p class="small-text">{{ snackbarMessage }}</p>
+</div>
+
+<!-- Calls footer component -->
+<app-footer></app-footer>
